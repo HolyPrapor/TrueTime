@@ -26,7 +26,7 @@ func trueTimeHandler(w http.ResponseWriter, r *http.Request) {
 		fail(w, r, err)
 		return
 	}
-	http.RedirectHandler(string(output), http.StatusPermanentRedirect).ServeHTTP(w, r)
+	http.RedirectHandler(string(output), http.StatusTemporaryRedirect).ServeHTTP(w, r)
 }
 
 func RunServerWithRouting(port int) {
